@@ -5,7 +5,6 @@ const { generateGuid, clearHistory } = guidStore
 const currentGuid = computed(() => guidStore.currentGuid)
 const history = computed(() => guidStore.history)
 
-
 onMounted(() => {
   if (!currentGuid.value) {
     generateGuid()
@@ -22,7 +21,6 @@ useSeoMeta({
 })
 </script>
 
-
 <template>
   <section class="p-4 max-w-xl mx-auto space-y-6">
     <h1 class="text-white text-3xl sm:text-4xl font-bold">Easy GUID Generator</h1>
@@ -31,8 +29,11 @@ useSeoMeta({
       class="text-white bg-[#00DC82] hover:bg-white hover:text-[#0D162B] px-4 py-2 rounded-full transition-colors flex items-center justify-center">
         Generate GUID <IconsGenerateIcon class="inline-block w-5 h-5 ml-2" />
     </button>
-    <CurrentGuid :guid="currentGuid" />
-    <History :history="history" :clearHistory="clearHistory" />
+    <ClientOnly>
+      <CurrentGuid :guid="currentGuid" />
+      <History :history="history" :clearHistory="clearHistory" />
+    </ClientOnly>
+
   </section>
 
   <PillComponent 
