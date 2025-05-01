@@ -4,7 +4,7 @@ const guidStore = useGuidStore()
 const { generateGuid, clearHistory } = guidStore
 const currentGuid = computed(() => guidStore.currentGuid)
 const history = computed(() => guidStore.history)
-const { useSeoMeta } = useHead()
+
 
 onMounted(() => {
   if (!currentGuid.value) {
