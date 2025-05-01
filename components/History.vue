@@ -24,7 +24,7 @@ function formatTimestamp(ts: string): string {
       <h2 class="text-lg font-bold text-white">Your Previous Guids</h2>
       <button
         @click="clearHistory"
-        class="bg-red-900 hover:bg-white hover:text-red-900 text-white transition-all text-sm px-3 h-9 py-1 flex items-center">
+        class="bg-red-900 hover:bg-white hover:text-red-900 text-white transition-all text-sm px-3 h-9 py-1 flex items-center rounded-full">
           <IconsTrash class="w-4 h-4 mr-2"/> Clear History
       </button>
     </div>
@@ -35,10 +35,10 @@ function formatTimestamp(ts: string): string {
         :key="index"
         :class="{
           'border-b border-grey-lighter pb-4 pt-2 px-2': index < history.length - 1,
-          'text-gray-300 pt-2': true
+          'text-gray-300 pt-2 px-2': true
         }"
       >
-        <p class="font-mono text-xs sm:text-sm">{{ item.guid }}</p>
+        <p class="font-mono text-xs sm:text-sm leading-none">{{ item.guid }}</p>
         <p class="text-white text-xs sm:text-sm">{{ formatTimestamp(item.timestamp) }}</p>
       </li>
     </ul>

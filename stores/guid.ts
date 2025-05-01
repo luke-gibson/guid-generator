@@ -18,4 +18,4 @@ export const useGuidStore = defineStore('guid', {
     },
   },
   persist: true,
-})
+});

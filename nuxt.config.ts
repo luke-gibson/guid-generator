@@ -8,4 +8,15 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt'
   ],
+  app: {
+    head: {
+      title: 'Free GUID Generator Online – Create Unique GUIDs Instantly | EasyGUID',
+      htmlAttrs: {
+        lang: 'en',
+      },
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ]
+    }
+  }
 })
