@@ -9,7 +9,7 @@ export const useGuidStore = defineStore('guid', {
   actions: {
     generateGuid() {
       const newGuid = uuidv4()
-      const timestamp = new Date().toLocaleString()
+      const timestamp = new Date().toISOString()
       this.currentGuid = newGuid
       this.history.unshift({ guid: newGuid, timestamp })
     },

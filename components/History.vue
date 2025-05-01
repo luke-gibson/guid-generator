@@ -5,16 +5,17 @@ defineProps<{
 }>();
 
 function formatTimestamp(ts: string): string {
-  const date = new Date(ts)
-  return date.toLocaleString('en-GB', {
+  const date = new Date(ts);
+  return date.toLocaleDateString('en-GB', {
     day: '2-digit',
     month: 'short',
     year: 'numeric',
+  }) + ' ' + date.toLocaleTimeString('en-GB', {
     hour: '2-digit',
     minute: '2-digit',
-    hour12: false
-  })
+  });
 }
+
 </script>
 
 <template>
